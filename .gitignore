@@ -52,3 +52,57 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# Visual Studio cache/options
+.vs/
+.vscode/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Local environment and configuration
+.env
+.env.local
+*.local
+appsettings.local.json
+appsettings.Development.json
+
+# IDE specific files
+*.swp
+*.swo
+*.*~
+.DS_Store
+
+# ReSharper/Rider
+.idea/
+*.sln.iml
+reSharperPlugin.xml
+
+# OpenCover
+opencoverage/
+
+# Rider
+.rider/
+
+# Code analysis
+StyleCop.Cache
+
+# BenchmarkDotNet
+BenchmarkDotNet.Artifacts/
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+
+# ASP.NET Core specific
+*.cer
+*.crt
+*.pfx
+*.p12
+wwwroot/lib/
+node_modules/
+dist/
