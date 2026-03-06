@@ -1,4 +1,11 @@
 
+using Microsoft.EntityFrameworkCore;
+using WebApplication1.Data;
+using WebApplication1.IRepositories;
+using WebApplication1.IServices;
+using WebApplication1.Repositories;
+using WebApplication1.Services;
+
 namespace WebApplication1
 {
     public class Program
@@ -10,9 +17,20 @@ namespace WebApplication1
             // Add services to the container.
 
             builder.Services.AddControllers();
+
+            builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(
+                builder.Configuration.GetConnectionString("DefaultConnection"))
+            );
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+            builder.Services.AddScoped<IStudentService, StudentService>();
+
+            builder.Services.AddScoped<ISubjectRepository, SubjectRepository>();
+            builder.Services.AddScoped<ISubjectService, SubjectService>();
 
             var app = builder.Build();
 
